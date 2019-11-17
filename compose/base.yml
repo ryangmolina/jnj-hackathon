@@ -1,0 +1,46 @@
+version: '2'
+
+services:
+    main-postgres:
+        image: postgres:9.5-alpine
+        volumes:
+            - ../db/postgres:/var/lib/postgresql/data/
+        container_name: main-postgres
+        ports:
+            - "8001:5432"
+        env_file:
+            - app.env
+
+    main-redis:
+        image: redis:alpine
+        volumes:
+            - ../db/redis:/data
+        container_name: main-redis
+
+    main-rabbitmq:
+        image: rabbitmq:alpine
+        hostname: "main_rabbitmq"
+        container_name: main-rabbitmq
+        env_file:
+            - app.env
+
+    main-web:
+        image: project
+        build:
+            context: ../
+        volumes:
+            - ../:/srv/oscar/project
+        container_name: main-web
+        working_dir: "/srv/oscar/project"
+        command: scripts/docker_startup.sh
+        env_file:
+            - app.env
+
+    main-nginx:
+        build:
+            context: ../
+            dockerfile: DockerfileNginx
+        image: main-nginx
+        container_name: main-nginx
+        env_file:
+            - app.env

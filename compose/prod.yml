@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+    prod-postgres:
+        extends:
+            file: base.yml
+            service: main-postgres
+
+    prod-redis:
+        extends:
+            file: base.yml
+            service: main-redis
+
+    prod-rabbitmq:
+        extends:
+            file: base.yml
+            service: main-rabbitmq
+
+    prod-web:
+        extends:
+            file: base.yml
+            service: main-web
+        container_name: prod-web
+        depends_on:
+            - prod-postgres
+            - prod-redis
+            - prod-rabbitmq
+        ports:
+            - "2222:22"
+
+    prod-nginx:
+        extends:
+            file: base.yml
+            service: main-nginx
+        volumes_from:
+            - prod-web
+        links:
+            - prod-web
+        ports:
+            - "80:80"
+            - "443:443"

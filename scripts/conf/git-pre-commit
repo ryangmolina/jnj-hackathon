@@ -1,0 +1,67 @@
+#!/usr/bin/env python
+"""Pre-commit Hook to perform PEP8 compliance
+
+This will copy the files on staging on a temporary directory and perform a pep8 check on it. It will
+also clean up itself afterwards by deleting the temp files.
+
+Note that committing migration files should be done separately and must be run with the
+``--no-verify`` flag::
+
+    git commit <args> --no-verify
+
+.. NOTE::
+    - PEP8 is to be followed strictly save for E501. We'll follow a 100 character limit instead
+      until further notice.
+    - To ignore this hook do a commit with the ``--no-verify`` flag.
+    - We can probably use this template to perform lint checks on other file types too (i.e. js,
+      html, css, etc).
+
+.. TODO::
+    - Subversion and possibly modularize this script.
+
+"""
+import os
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+
+
+def system(*args, **kwargs):
+    kwargs.setdefault('stdout', subprocess.PIPE)
+    proc = subprocess.Popen(args, **kwargs)
+    out, err = proc.communicate()
+    return out
+
+
+def main():
+    modified = re.compile('^[AM]+\s+(?P<name>.*\.py)', re.MULTILINE)
+    files = system('git', 'status', '--porcelain')
+    files = modified.findall(files)
+
+    tempdir = tempfile.mkdtemp()
+    for name in files:
+        filename = os.path.join(tempdir, name)
+        filepath = os.path.dirname(filename)
+        if not os.path.exists(filepath):
+            os.makedirs(filepath)
+        with file(filename, 'w') as f:
+            system('git', 'show', ':' + name, stdout=f)
+    output = system(
+        'flake8',
+        '--ignore=E121,E123,E126,E226,E24,E704,E402',
+        '--max-line-length=100',
+        '--exclude=migrations,^[\d]+.py,settings,south_migrations',
+        '--max-complexity=10',
+        '.',
+        cwd=tempdir
+    )
+    shutil.rmtree(tempdir)
+    if output:
+        print output,
+        sys.exit(1)
+
+
+if __name__ == '__main__':
+    main()

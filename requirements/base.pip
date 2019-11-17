@@ -1,0 +1,20 @@
+# Base Packages
+Django==2.0
+
+psycopg2
+
+gunicorn
+
+celery
+django_celery_beat
+
+django-allauth
+
+djangorestframework==3.7.7
+django-filter==1.0.2
+django-rest-multiple-models==1.8.2
+
+ipython
+
+django-js-reverse
+django-webpack-loader

@@ -1,0 +1,45 @@
+version: '2'
+
+services:
+    dev-postgres:
+        extends:
+            file: base.yml
+            service: main-postgres
+        container_name: dev-postgres
+
+    dev-redis:
+        extends:
+            file: base.yml
+            service: main-redis
+        container_name: dev-redis
+
+    dev-rabbitmq:
+        extends:
+            file: base.yml
+            service: main-rabbitmq
+        container_name: dev-rabbitmq
+
+    dev-web:
+        extends:
+            file: base.yml
+            service: main-web
+        container_name: dev-web
+        depends_on:
+            - dev-postgres
+            - dev-redis
+            - dev-rabbitmq
+        ports:
+            - "2211:22"
+
+    dev-nginx:
+        extends:
+            file: base.yml
+            service: main-nginx
+        container_name: dev-nginx
+        volumes_from:
+            - dev-web
+        links:
+            - dev-web
+        ports:
+            - "8080:80"
+            - "9080:443"
