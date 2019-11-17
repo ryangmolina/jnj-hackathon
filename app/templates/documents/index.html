@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}
+  {{ block.super }} | {{ title }}
+{% endblock title %}
+
+{% block content %}
+  <div id="page-documents">
+    Hello
+  </div>
+{% endblock content %}
+
+{% block scripts %}
+  {% render_bundle 'documents' %}
+{% endblock scripts %}

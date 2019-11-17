@@ -37,8 +37,8 @@ init_env:
 vue_dev:
 	rm -rf app/assets/webpack_bundles/*.js;
 	cd frontend; npm run build_dev; cd -;
-	mv app/assets/webpack_bundles/*.js app/assets/webpack_bundles_build/;
-	mv app/assets/webpack_bundles_build/*.js app/assets/webpack_bundles/;
+	mv app/assets/webpack_bundles/ app/assets/webpack_bundles_build/;
+	mv app/assets/webpack_bundles_build/ app/assets/webpack_bundles/;
 	make assets
 
 vue:

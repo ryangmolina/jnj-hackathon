@@ -6,6 +6,7 @@ module.exports = {
   context: __dirname,
   entry: {
     dashboard: './src/dashboard/',
+    services: './src/services/',
   },
   output: {
     path: path.resolve('../app/assets/webpack_bundles/'),
