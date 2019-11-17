@@ -1,20 +1,59 @@
 {% load static %}
-<nav id="sidebar" class="sidebar-wrapper">
-  <div class="sidebar-content">
-    <div class="sidebar-header">
-      <div class="sidebar-header-logo">
+<ul class="navbar-nav bg-gradient-branding-color sidebar sidebar-dark accordion" id="accordion-sidebar">
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <div class="sidebar-brand-icon">
+      <img src="{% static 'images/jnj_logo.svg'%}" height="24px" width="200px" />
+    </div>
+    <div class="sidebar-brand-text"></div>
+  </a>
+
+  <!-- Divider -->
+  <!--<hr class="sidebar-divider my-0"> -->
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item active">
+    <a class="nav-link" href="index.html">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span>Dashboard</span></a>
+  </li>
+
+  <!-- Divider
+  <hr class="sidebar-divider">
+  <div class="sidebar-heading">
+  </div>
+  -->
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#nav-services" aria-expanded="true" aria-controls="nav-services">
+      <i class="fas fa-fw fa-server"></i>
+      <span>Services</span>
+    </a>
+    <div id="nav-services" class="collapse" aria-labelledby="heading-services" data-parent="#accordion-sidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Available Services:</h6>
+        <a class="collapse-item" href="{% url 'forms:forms' %}">Request for document</a>
       </div>
     </div>
+  </li>
 
-    <div class="sidebar-menu">
-      <ul>
-        <li class="active">
-          <a href="#">
-            <i class="fas fa-home"></i>
-            Home
-          </a>
-        </li>
-      </ul>
-    </div>
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="{% url 'forms:forms' %}">
+      <i class="fas fa-fw fa-server"></i>
+      <span>Documents</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="fas fa-fw fa-cog"></i>
+      <span>Settings</span>
+    </a>
+  </li>
+
+  <!-- Sidebar Toggler (Sidebar)
+  <div class="text-center d-none d-md-inline">
+    <button class="rounded-circle border-0" id="sidebarToggle"></button>
   </div>
-</nav>
+  -->
+</ul>

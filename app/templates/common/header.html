@@ -1,52 +1,41 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button"
-          class="navbar-toggle collapsed"
-          data-toggle="collapse"
-          data-target="#bs-example-navbar-collapse-1"
-          aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="#" class="navbar-brand" rel="home">
-        <img class="img-responsive"
-             src=""/>
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <ul class="navbar-nav ml-auto">
+    {% if user.is_authenticated %}
+    <li class="nav-item no-arrow mx-1 dropdown">
+      <a href="#" class="nav-link dropdown-toggle"
+        data-toggle="dropdown"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        id="notifications-dropdown"
+      >
+        <i class="fas fa-bell fa-fw"></i>
+        <span class="badge badge-danger badge-counter">9+<span>
       </a>
-    </div>
 
-    <div class="collapse navbar-collapse navbar-expanded" id="bs-example-navbar-collapse-1">
-      {% if user.is_authenticated %}
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle nav-main-link"
-            data-toggle="dropdown"
-            role="button"
-            aria-haspopup="true"
-            aria-expanded="false">
-            <span class="fa-stack fa-lg">
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-user-o fa-inverse fa-stack-1x"></i>
-            </span>
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="{% url 'account_logout' %}">Log out</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      {% else %}
-      <p class="navbar-text navbar-right">
-        <a href="{% url 'account_login' %}" class="btn btn-success">
-          Sign In
+      <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="notifications-dropdown">
+        <h6 class="dropdown-header bg-gradient-branding-color">
+          Alerts Center
+        </h6>
+        <a class="dropdown-item d-flex align-items-center" href="#">
+          <div class="mr-3">
+            <div class="icon-circle">
+              <i class="fas fa-file-alt text-gray-700"></i>
+            </div>
+          </div>
+          <div>
+            <div class="small text-gray-500">November 25, 2019</div>
+            <span class="font-weight-bold">Welcome to Johnson & Johnson</span>
+          </div>
         </a>
-      </p>
-      {% endif %}
-
-    </div><!-- end of navbar-collapsed -->
-  </div><!-- end of container -->
+        <a class="dropdown-item text-center small text-gray-500" href="#">Show all</a>
+      </div>
+    </li>
+    {% else %}
+    {% endif %}
+  </ul>
 </nav>

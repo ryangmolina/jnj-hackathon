@@ -34,16 +34,15 @@
   <script src="{% url 'js_reverse' %}" type="text/javascript"></script>
 
   </head>
-<body>
-
+<body id="page-top">
 {% block body %}
-  <div class="page-wrapper toggled">
+  <div id="wrapper" class="page-wrapper">
     {% block sidebar %}
       {% include 'common/sidebar.html' %}
     {% endblock sidebar %}
 
-    <div class="page-wrapper">
-      <div class="page-content">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content" class="page-content">
         {% block header %}
           {% include 'common/header.html' %}
         {% endblock header %}
