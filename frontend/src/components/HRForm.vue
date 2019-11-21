@@ -1,6 +1,5 @@
 <template>
 <form class="container-fluid">
-  <hr />
   <h4>Personal Information</h4>
   <div class="row">
     <div class="col-md-3">

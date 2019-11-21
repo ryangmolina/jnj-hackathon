@@ -7,6 +7,9 @@ module.exports = {
   entry: {
     dashboard: './src/dashboard/',
     services: './src/services/',
+    services_tracking: './src/services/tracking',
+    forms: './src/forms/',
+    documents: './src/documents/',
   },
   output: {
     path: path.resolve('../app/assets/webpack_bundles/'),

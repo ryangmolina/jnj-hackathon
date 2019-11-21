@@ -1,7 +1,7 @@
 {% load static %}
 <ul class="navbar-nav bg-gradient-branding-color sidebar sidebar-dark accordion" id="accordion-sidebar">
   <!-- Sidebar - Brand -->
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
     <div class="sidebar-brand-icon">
       <img src="{% static 'images/jnj_logo.svg'%}" height="24px" width="200px" />
     </div>
@@ -13,7 +13,7 @@
 
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="{% url 'dashboard:index' %}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
   </li>
@@ -32,13 +32,21 @@
     <div id="nav-services" class="collapse" aria-labelledby="heading-services" data-parent="#accordion-sidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Available Services:</h6>
-        <a class="collapse-item" href="{% url 'forms:forms' %}">Request for document</a>
+        <a class="collapse-item" href="{% url 'services:job_change_request' %}">Job change request</a>
+        <a class="collapse-item" href="{% url 'services:tracking' %}">Tracking</a>
       </div>
     </div>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link collapsed" href="{% url 'forms:forms' %}">
+    <a class="nav-link collapsed" href="{% url 'forms:index' %}">
+      <i class="fas fa-fw fa-server"></i>
+      <span>Forms</span>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="{% url 'documents:index' %}">
       <i class="fas fa-fw fa-server"></i>
       <span>Documents</span>
     </a>
