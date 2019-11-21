@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^', include('app.dashboard.urls', namespace='dashboard')),
+    url(r'^api/v1/', include('app.api.urls', namespace='api')),
     url(r'^forms/', include('app.forms.urls', namespace='forms')),
     url(r'^documents/', include('app.documents.urls', namespace='documents')),
     url(r'^services/', include('app.services.urls', namespace='services')),
