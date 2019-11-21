@@ -10,6 +10,6 @@ urlpatterns = [
     url(
         r'^$',
         DashboardView.as_view(),
-        name='dashboard',
+        name='index',
     )
 ]

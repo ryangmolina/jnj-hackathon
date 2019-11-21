@@ -10,6 +10,6 @@ urlpatterns = [
     url(
         r'^$',
         DocumentsView.as_view(),
-        name='documents',
+        name='index',
     )
 ]

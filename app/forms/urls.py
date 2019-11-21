@@ -10,6 +10,6 @@ urlpatterns = [
     url(
         r'^$',
         FormsView.as_view(),
-        name='forms',
+        name='index',
     )
 ]
