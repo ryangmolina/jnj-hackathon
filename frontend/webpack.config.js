@@ -10,6 +10,9 @@ module.exports = {
     services_tracking: './src/services/tracking',
     forms: './src/forms/',
     documents: './src/documents/',
+    navbar: './src/navbar/',
+    accounts: './src/accounts/',
+    index: './src/',
   },
   output: {
     path: path.resolve('../app/assets/webpack_bundles/'),

@@ -1,9 +1,9 @@
 {% load static %}
-<ul class="navbar-nav bg-gradient-branding-color sidebar sidebar-dark accordion" id="accordion-sidebar">
+<ul class="navbar-nav bg-gradient-branding-color sidebar sidebar-dark accordion toggled" id="accordion-sidebar">
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
     <div class="sidebar-brand-icon">
-      <img src="{% static 'images/jnj_logo.svg'%}" height="24px" width="200px" />
+      <img src="{% static 'images/jnj_logo.svg'%}" height="24px" width="100px" />
     </div>
     <div class="sidebar-brand-text"></div>
   </a>
@@ -12,7 +12,7 @@
   <!--<hr class="sidebar-divider my-0"> -->
 
   <!-- Nav Item - Dashboard -->
-  <li class="nav-item active">
+  <li class="nav-item">
     <a class="nav-link" href="{% url 'dashboard:index' %}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard</span></a>
@@ -33,6 +33,7 @@
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Available Services:</h6>
         <a class="collapse-item" href="{% url 'services:job_change_request' %}">Job change request</a>
+        <a class="collapse-item" href="{% url 'services:certificate_of_employment_request' %}">Certificate of employment request</a>
         <a class="collapse-item" href="{% url 'services:tracking' %}">Tracking</a>
       </div>
     </div>

@@ -1,4 +1,3 @@
-from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.routers import DefaultRouter
 
 from django.conf.urls import include

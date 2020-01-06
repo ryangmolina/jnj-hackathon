@@ -15,8 +15,11 @@
     "style-loader": "^0.19.0",
     "vue": "^2.4.4",
     "vue-autosuggest": "^2.0.4",
+    "vue-avatar": "^2.1.8",
+    "vue-letter-avatar": "^0.1.6",
+    "vue-masonry": "^0.11.8",
     "vuejs-datepicker": "^1.6.2",
-    "vuex": "^3.0.1"
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

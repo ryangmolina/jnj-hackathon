@@ -1,14 +1,14 @@
 <template>
   <div>
-    <Tracker></Tracker>
+    <JCRTracker></JCRTracker>
   </div>
 </template>
 <script>
-import Tracker from 'app/components/Tracker.vue'
+import JCRTracker from 'app/components/JCRTracker.vue'
 
 export default {
   components: {
-    Tracker,
+    JCRTracker,
   }
 }
 </script>

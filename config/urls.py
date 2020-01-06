@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^documents/', include('app.documents.urls', namespace='documents')),
     url(r'^services/', include('app.services.urls', namespace='services')),
     url(r'^user/', include('allauth.urls')),
+    url(r'^accounts/', include('app.accounts.urls', namespace='accounts')),
     url(r'^jsreverse/$', urls_js, name='js_reverse'),
 ]
 

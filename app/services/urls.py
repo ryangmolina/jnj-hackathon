@@ -4,6 +4,7 @@ from .views import (
     ServicesView,
     JobChangeRequestView,
     TrackingView,
+    CertificateOfEmploymentRequestView,
 )
 
 
@@ -23,5 +24,10 @@ urlpatterns = [
         r'^tracking/$',
         TrackingView.as_view(),
         name='tracking',
+    ),
+    url(
+        r'^certificate-of-employment-request/$',
+        CertificateOfEmploymentRequestView.as_view(),
+        name='certificate_of_employment_request',
     ),
 ]

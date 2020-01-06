@@ -76,10 +76,10 @@
   color: #333;
 }
 .progress-step.is-active .progress-marker::before {
-  background-color: #2196F3;
+  background-color: #6c757d;
 }
 .progress-step.is-complete .progress-marker::before, .progress-step.is-progress .progress-marker::before {
-  background-color: #1976D2;
+  background-color: #343a40;
 }
 .progress-step.is-complete .progress-marker::after, .progress-step.is-progress .progress-marker::after {
   background-color: #868686;
@@ -112,7 +112,7 @@
   background-image: linear-gradient(to right, #868686 90%, #b6b6b6 90%);
 }
 .progress-step:hover .progress-marker::before {
-  background-color: #56ADF5;
+  background-color: #dd3d31;
 }
 .progress-tracker--text .progress-step:last-child, .progress-tracker--center .progress-step:last-child, .progress-tracker--right .progress-step:last-child {
   flex-grow: 1;

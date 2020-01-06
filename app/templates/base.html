@@ -63,6 +63,7 @@
 {# JS Section #}
 {% include 'common/scripts.html' %}
 {% block scripts %}
+  {% render_bundle 'index' %}
 {% endblock scripts %}
 
 {# Quick and dirty on page JS Section #}

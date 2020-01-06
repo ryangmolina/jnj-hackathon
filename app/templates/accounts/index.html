@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load render_bundle from webpack_loader %}
+
+{% block title %}
+  {{ block.super }} | {{ title }}
+{% endblock title %}
+
+{% block content %}
+  <div id="page-account">
+  </div>
+{% endblock content %}
+
+{% block scripts %}
+  {% render_bundle 'accounts' %}
+{% endblock scripts %}

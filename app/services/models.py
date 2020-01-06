@@ -18,13 +18,6 @@ class JobChangeRequest(core_models.BaseModel):
     )
 
     requested_by = models.ForeignKey(Account, on_delete=models.CASCADE)
-
-    employee_name = models.CharField(max_length=128)
-    employee_wwid = models.CharField(max_length=128)
-    effective_date = models.DateTimeField()
-    country = models.CharField(max_length=64)
-    is_data_change = models.BooleanField()
-    is_employee_change = models.BooleanField()
     """more fields
     .
     .

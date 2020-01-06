@@ -48,13 +48,14 @@ THIRD_PARTY_APPS = [
     'drf_multiple_model',
 
     'django_js_reverse',
+    'notifications',
 
     'webpack_loader',
 ]
 
 LOCAL_APPS = [
     'app.core',
-    'app.accounts',
+    'app.accounts.apps.AccountsConfig',
     'app.api',
     'app.dashboard',
     'app.services',

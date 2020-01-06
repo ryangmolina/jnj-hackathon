@@ -18,3 +18,8 @@ ipython
 
 django-js-reverse
 django-webpack-loader
+
+django-notifications-hq
+
+pandas
+sklearn
