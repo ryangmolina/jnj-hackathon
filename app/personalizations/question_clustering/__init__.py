@@ -4,34 +4,6 @@ import pandas as pd
 import joblib
 
 
-"""
-questions = {
-    "0": [
-        "How to file leaves?",
-        "What are the existing company clubs?",
-        "How to reset password?",
-        "How to file complaint against another employer?",
-        "How to get COE?",
-        "How many leaves do I have?",
-        "How to file salary loan?",
-        "How to do reimbursement?",
-        "How to apply for training?",
-    ],
-    "1": ["How to get promoted?", "How to promote someone?",],
-    "2": [
-        "What are the benefits that I can avail upon regularization?",
-        "What are the company policies?",
-        "What is the company hotline?",
-        "What is the company organization?",
-        "How to connect to wifi?",
-        "When is the schedule of salary disbursement per month?",
-        "How install work applications in PC?",
-    ],
-    "3": ["How to get promoted?", "How to promote someone?",],
-    "4": ["How to get clearance?", "How to get transferred to another unit?",],
-}
-"""
-
 questions = {
     "3": [
         "What are the benefits that I can avail upon regularization?",
